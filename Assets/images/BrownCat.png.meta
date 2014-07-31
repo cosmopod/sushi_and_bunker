@@ -1,0 +1,355 @@
+fileFormatVersion: 2
+guid: 757cbdad652b0154da5d93e3313998df
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: BrownCat_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 366
+        width: 38
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 366
+        width: 38
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 366
+        width: 38
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_3
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 297
+        width: 46
+        height: 39
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: BrownCat_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 297
+        width: 38
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_5
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 297
+        width: 36
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_6
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 297
+        width: 35
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_7
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 297
+        width: 40
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_8
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 297
+        width: 38
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_9
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 297
+        width: 41
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_10
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 297
+        width: 44
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_11
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 297
+        width: 48
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_12
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 234
+        width: 49
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_13
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 234
+        width: 49
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_14
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 234
+        width: 49
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_15
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 232
+        width: 38
+        height: 37
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_16
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 232
+        width: 39
+        height: 37
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_17
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 232
+        width: 41
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_18
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 163
+        width: 38
+        height: 37
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 164
+        width: 46
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_20
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 164
+        width: 44
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_21
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 164
+        width: 41
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_22
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 165
+        width: 38
+        height: 37
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_23
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 165
+        width: 41
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_24
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 93
+        width: 38
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_25
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 78
+        width: 41
+        height: 49
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_26
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 91
+        width: 49
+        height: 36
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_27
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 87
+        width: 41
+        height: 35
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_28
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 65
+        width: 29
+        height: 56
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_29
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 78
+        width: 42
+        height: 39
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_30
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 8
+        width: 85
+        height: 108
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: BrownCat_31
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 4
+        width: 37
+        height: 43
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_32
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 11
+        width: 49
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: BrownCat_33
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 65
+        height: 45
+      alignment: 7
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

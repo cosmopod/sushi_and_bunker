@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 6b2fff1090caa0444b16a377ce7f4100
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - jumpSound: {instanceID: 0}
+  - idleAnimation: {fileID: 7400000, guid: acac099321fbc4040805af82fda14ea1, type: 2}
+  - runAnimation: {fileID: 7400000, guid: f3e5efc5862d157439bd8658debf7511, type: 2}
+  - jumpAnimation: {fileID: 7400000, guid: 43f2a2d4ea0b8ed429ecb1389d31970b, type: 2}
+  - fallAnimation: {fileID: 7400000, guid: 5fa7bed96e121e847889b347a52d7682, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
