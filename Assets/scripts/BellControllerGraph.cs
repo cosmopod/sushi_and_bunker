@@ -5,7 +5,7 @@ public class BellControllerGraph : MonoBehaviour
 {
 
 	
-		public int speed = 4;
+		public float speed = 5.0f;
 		protected Bounds bound;
 		public const int BELL_POINTS = 20;
 		public GameObject explosion;
@@ -90,5 +90,15 @@ public class BellControllerGraph : MonoBehaviour
 		{		
 				spriteRenderer.color = new Color (1.0f, 1.0f, Random.Range (0.5f, 1.0f));
 				
+		}
+		
+		public void IncreaseSpeed ()
+		{
+				this.speed += .5f;
+		}
+
+		public void ResetSpeed ()
+		{
+				this.speed = 5.0f;
 		}
 }

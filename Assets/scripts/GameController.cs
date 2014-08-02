@@ -3,27 +3,42 @@ using System.Collections;
 
 public class GameController : MonoBehaviour
 {
+		//GameController vars
 		public enum GameState
 		{
 				playing,
 				gameover
 		}
 		;
-		public GameObject player;
-		public GameObject bellHolderController;
+		
+		
 		public GameState gameState = GameState.playing;
-		public static GameController Instance;
 		public float timeScrolling = 0.0f;
-		public static float limitTimeScrolling = 4.0f;
-		public GameObject score;	
-		public GameObject bestScore;
-		protected BestScore bs;
-		
+		public static float limitTimeScrolling = 3.0f;
 		protected float scrollDownCamspeed = 50.0f;
-		protected PlayerControllerGraph pc;
-		protected SaveScore saveScore;
 		protected bool isSaving = false;
+		public int nextlevelScore = 100;
+		public static int leveScoreStep = 100;
+		protected int fibonacci1 = 1;
+		protected int fibonacci2 = 1;
+		protected int lastFibonacci = 0;
 		
+		//gameplay gameobjects
+		public GameObject score;	
+		public GameObject bestScore;	
+
+
+		//world gameobjects
+		public GameObject player;
+		public GameObject sushi;
+		public GameObject bellHolderController;
+		
+		//gameobject controllers
+		public static GameController Instance;
+		protected PlayerControllerGraph pc;
+		protected BestScore bs;
+		protected SaveScore saveScore;
+		protected BellControllerGraph sushiController;
 
 
 		void Awake ()
@@ -36,6 +51,7 @@ public class GameController : MonoBehaviour
 				pc = player.GetComponent<PlayerControllerGraph> ();
 				saveScore = gameObject.GetComponent<SaveScore> ();
 				bs = bestScore.GetComponent<BestScore> ();
+				sushiController = sushi.GetComponent<BellControllerGraph> ();
 				
 		}
 	
@@ -46,6 +62,9 @@ public class GameController : MonoBehaviour
 				Quit ();
 				IsGameOver (player.transform);
 				if (gameState == GameState.gameover) {
+						
+						ResetFibonnacci ();
+						sushiController.ResetSpeed ();
 
 						if (!isSaving) {
 								bs.SetLabelScore (SaveScore (pc.GetPoints ().ToString ()));
@@ -80,6 +99,8 @@ public class GameController : MonoBehaviour
 								
 
 				} else if (gameState == GameState.playing) {
+
+						IncreaseLevel (pc.GetPoints ());
 
 						isSaving = false;
 						
@@ -122,6 +143,31 @@ public class GameController : MonoBehaviour
 				
 				return score;
 						
+		}
+		
+		protected int IncreaseFibonacci ()
+		{
+				lastFibonacci = fibonacci1 + fibonacci2;
+				fibonacci1 = fibonacci2;
+				fibonacci2 = lastFibonacci;
+				return lastFibonacci;
+				
+		}
+
+		protected void ResetFibonnacci ()
+		{
+				fibonacci1 = 1;
+				fibonacci2 = 1;
+				lastFibonacci = 0;
+		}
+		public void IncreaseLevel (int actualScore)
+		{
+				if (actualScore >= nextlevelScore) {
+						
+						IncreaseFibonacci ();
+						nextlevelScore = leveScoreStep * lastFibonacci;
+						sushiController.IncreaseSpeed ();
+				}	
 		}
 	
 		
