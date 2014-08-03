@@ -1,13 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\GameController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\EnvironmentController.cs">
     <Files>
-      <File FileName="Assets\scripts\GameController.cs" Line="117" Column="5" />
+      <File FileName="Assets\scripts\PlayerControllerGraph.cs" Line="21" Column="37" />
       <File FileName="Assets\scripts\ScoreController.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\PlayerControllerGraph.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\GameController.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\BellHolderController.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BellControllerGraph.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BestScore.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\PlayerControllerGraph.cs" Line="237" Column="1" />
+      <File FileName="Assets\scripts\EnvironmentController.cs" Line="27" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

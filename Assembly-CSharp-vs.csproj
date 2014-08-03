@@ -168,6 +168,7 @@
      <Compile Include="Assets\scripts\BellHolderController.cs" />
      <Compile Include="Assets\scripts\BestScore.cs" />
      <Compile Include="Assets\scripts\BirdControllerGraph.cs" />
+     <Compile Include="Assets\scripts\EnvironmentController.cs" />
      <Compile Include="Assets\scripts\ExplosionController.cs" />
      <Compile Include="Assets\scripts\GameController.cs" />
      <Compile Include="Assets\scripts\PlayerControllerGraph.cs" />

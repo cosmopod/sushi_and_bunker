@@ -16,6 +16,9 @@ public class PlayerControllerGraph : MonoBehaviour
 		public bool isRight = false;
 		protected Animator animator;
 		public bool isRunning;
+		public bool isHungry;
+		protected float waitingTime = 0.0f;
+		protected float timeToHungry = 6.5f;
 		public bool isFalling;
 		public Sprite[] sprites;
 		protected Vector3 startPosition;
@@ -85,27 +88,42 @@ public class PlayerControllerGraph : MonoBehaviour
 				Vector3 mousePos = Input.mousePosition;
 				Vector3 wantedPos = Camera.main.ScreenToWorldPoint (new Vector3 (mousePos.x, mousePos.y, depth));
 				if (wantedPos.x > transform.localPosition.x + 1) {
+						waitingTime = 0.0f;
 						if (!isRight) {
 								transform.Rotate (0.0f, -180.0f, 0.0f);
 								isRight = true;
 						}
-						if (!isRunning)
+						if (!isRunning) {
+								
 								isRunning = true;
+								isHungry = false;
+						}
+						animator.SetBool ("IsHungry", isHungry);
 						animator.SetBool ("IsRunning", isRunning);
 						transform.position += Vector3.right * SetSpeed (isGrounded) * Time.deltaTime;
 				} else if (wantedPos.x < transform.localPosition.x - 1) {
+						waitingTime = 0.0f;
 						if (isRight) {
 								transform.Rotate (0.0f, 180.0f, 0.0f);
 								isRight = false;
 						}
-						if (!isRunning)
+						if (!isRunning) {
 								isRunning = true;
-						
+								isHungry = false;
+						}
+						animator.SetBool ("IsHungry", isHungry);
 						animator.SetBool ("IsRunning", isRunning);
 						transform.position -= Vector3.right * SetSpeed (isGrounded) * Time.deltaTime;
 				} else {
-						if (isRunning)
+						if (isRunning) {
 								isRunning = false;
+						}
+						waitingTime += Time.deltaTime;
+						if (waitingTime >= timeToHungry) {
+								isHungry = true;
+								
+						}
+						animator.SetBool ("IsHungry", isHungry);
 						animator.SetBool ("IsRunning", isRunning);
 						transform.Translate (Vector3.zero);
 			
@@ -114,6 +132,9 @@ public class PlayerControllerGraph : MonoBehaviour
 		}
 		public void Jump ()
 		{
+				isHungry = false;
+				waitingTime = 0.0f;
+				
 				animator.enabled = false;
 				
 				if (!isGrounded) 				
