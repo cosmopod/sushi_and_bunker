@@ -8,7 +8,12 @@ public class BirdControllerGraph : MonoBehaviour
 		public float speed = 10.0f;
 		protected bool direction = true;
 		public GameObject explosion;
+		public float timeToShit = 3.0f;
+		public float lastShit = 0.0f;
+		public float chanceToShit = 25.0f;
 		
+		//GameObject 
+		public GameObject shit;
 		
 	
 		// Use this for initialization
@@ -21,7 +26,7 @@ public class BirdControllerGraph : MonoBehaviour
 		void Update ()
 		{
 				
-				
+				Shit ();
 				Movement (Reverse (transform));
 				Dissapear (transform);
 		}
@@ -89,6 +94,18 @@ public class BirdControllerGraph : MonoBehaviour
 				if (pos.y < 0)
 						Destroy (gameObject);
 		
+		}
+
+		public void Shit ()
+		{
+				
+				lastShit += Time.deltaTime;
+				if (lastShit >= timeToShit) {
+						if (chanceToShit >= 100 * Random.value) {
+								Instantiate (shit, transform.position, transform.rotation);
+								lastShit = 0.0f;
+						}
+				}
 		}
 
 }

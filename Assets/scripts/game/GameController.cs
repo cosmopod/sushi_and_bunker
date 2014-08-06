@@ -36,9 +36,11 @@ public class GameController : MonoBehaviour
 		//gameobject controllers
 		public static GameController Instance;
 		protected PlayerControllerGraph pc;
+		public BellHolderController bhc;
 		protected BestScore bs;
 		protected SaveScore saveScore;
 		protected BellControllerGraph sushiController;
+		
 
 
 		void Awake ()
@@ -52,7 +54,7 @@ public class GameController : MonoBehaviour
 				saveScore = gameObject.GetComponent<SaveScore> ();
 				bs = bestScore.GetComponent<BestScore> ();
 				sushiController = sushi.GetComponent<BellControllerGraph> ();
-				
+				bhc = BellHolderController.Instance;
 		}
 	
 		// Update is called once per frame
@@ -61,10 +63,13 @@ public class GameController : MonoBehaviour
 				
 				Quit ();
 				IsGameOver (player.transform);
+
 				if (gameState == GameState.gameover) {
 						
+						bhc.DestroyBells ();
 						ResetFibonnacci ();
 						sushiController.ResetSpeed ();
+						
 
 						if (!isSaving) {
 								bs.SetLabelScore (SaveScore (pc.GetPoints ().ToString ()));

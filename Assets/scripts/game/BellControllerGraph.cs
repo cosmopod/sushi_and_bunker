@@ -79,7 +79,7 @@ public class BellControllerGraph : MonoBehaviour
 						Destroy (gameObject);
 		
 		}
-		IEnumerator SmoothDissapear ()
+		public IEnumerator SmoothDissapear ()
 		{
 				TweenScale.Begin (gameObject, 0.5f, Vector3.zero);
 				yield return new WaitForSeconds (0.5f);

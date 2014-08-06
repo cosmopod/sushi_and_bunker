@@ -22,7 +22,9 @@ public class PlayerControllerGraph : MonoBehaviour
 		public bool isFalling;
 		public Sprite[] sprites;
 		protected Vector3 startPosition;
-		
+		protected bool isIll = false;
+		protected Color lerpedColor = Color.green;
+		protected float illTime = 0.0f;
 		
 		protected SpriteRenderer spriteRenderer;
 
@@ -47,6 +49,10 @@ public class PlayerControllerGraph : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
+
+				if (isIll)
+						Heal ();
+				
 				
 				if (transform.position.y >= maxHeight) {
 						maxHeight = transform.position.y;
@@ -232,5 +238,25 @@ public class PlayerControllerGraph : MonoBehaviour
 						animator.enabled = true;
 				
 		}
+		
+		public void FallIll ()
+		{
+				
+				isIll = true;
+				illTime = 0.0f;
+				rigidbody.velocity = Vector3.zero;
+				spriteRenderer.color = Color.grey;
+	
+	
+		}
+
+		public void Heal ()
+		{
+				illTime += Time.deltaTime * 0.25f;
+				lerpedColor = Color.Lerp (Color.green, Color.white, illTime);
+				spriteRenderer.color = lerpedColor;
+			
+		}
+
 	
 }

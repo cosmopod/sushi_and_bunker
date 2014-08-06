@@ -61,6 +61,7 @@ public class BellHolderController : MonoBehaviour
 						bellLimit = bellTime + BELL_ELAPSE;
 				
 				}
+				
 		}
 
 
@@ -69,9 +70,10 @@ public class BellHolderController : MonoBehaviour
 
 				Vector3 position = new Vector3 (pos.x, pos.y, 0f);
 				Instantiate (bell, position, transform.rotation);
-			
+				
 				
 		}
+	
 		
 		public void CreateBird (Vector3 pos)
 		{	
@@ -91,6 +93,16 @@ public class BellHolderController : MonoBehaviour
 		{
 				Vector3 pos = Camera.main.ViewportToWorldPoint (new Vector3 (Random.value, 0, 0));
 				return pos.x;
+		}
+
+		public void DestroyBells ()
+		{
+				GameObject[] arraySushi;
+				arraySushi = GameObject.FindGameObjectsWithTag ("Sushi");
+				foreach (GameObject gameObject in arraySushi) {
+						Destroy (gameObject);
+
+				}
 		}
 
 		
