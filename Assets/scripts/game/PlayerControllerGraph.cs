@@ -222,9 +222,6 @@ public class PlayerControllerGraph : MonoBehaviour
 				float leftBorder = Camera.main.ViewportToWorldPoint (new Vector3 (0f, 0f, distance)).x + (playerSize.x * .5f);
 				float rightBorder = Camera.main.ViewportToWorldPoint (new Vector3 (1f, 0f, distance)).x - (playerSize.x * .5f);
 		
-				//float bottomBorder = Camera.main.ViewportToWorldPoint (new Vector3 (0F, 0F, distance)).y + (playerSize.y / 2.0F);
-				//float topBorder = Camera.main.ViewportToWorldPoint (new Vector3 (0F, 1F, distance)).y - (playerSize.y / 2.0F);
-		
 				// Mentenemos la posicion del personaje dentro de los margenes de la camara
 				obj.position = (new Vector3 (Mathf.Clamp (obj.position.x, leftBorder, rightBorder), obj.position.y, obj.position.z));
 

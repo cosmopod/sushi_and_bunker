@@ -38,9 +38,9 @@ public class GameController : MonoBehaviour
 		protected PlayerControllerGraph pc;
 		public BellHolderController bhc;
 		protected BestScore bs;
-		protected SaveScore saveScore;
 		protected BellControllerGraph sushiController;
-		
+		//mejorar
+		protected Animator playerAnimator;
 
 
 		void Awake ()
@@ -51,17 +51,17 @@ public class GameController : MonoBehaviour
 		void Start ()
 		{
 				pc = player.GetComponent<PlayerControllerGraph> ();
-				saveScore = gameObject.GetComponent<SaveScore> ();
 				bs = bestScore.GetComponent<BestScore> ();
 				sushiController = sushi.GetComponent<BellControllerGraph> ();
 				bhc = BellHolderController.Instance;
+				playerAnimator = player.GetComponent<Animator> ();
 		}
 	
 		// Update is called once per frame
 		void Update ()
 		{
 				
-				Quit ();
+				
 				IsGameOver (player.transform);
 
 				if (gameState == GameState.gameover) {
@@ -72,15 +72,16 @@ public class GameController : MonoBehaviour
 						
 
 						if (!isSaving) {
-								bs.SetLabelScore (SaveScore (pc.GetPoints ().ToString ()));
+								bs.SetLabelScore (SavedScore (pc.GetPoints ().ToString ()));
 								isSaving = true;
 						}
 					
 						if (pc != null) {
 								
-								player.transform.position = Vector3.Lerp (player.transform.position, pc.GetStartPosition (), 1.0f);							
-								pc.enabled = false;
-								
+								player.transform.position = Vector3.Lerp (player.transform.position, pc.GetStartPosition (), 1.0f);
+								playerAnimator.SetBool ("IsHungry", false);
+								playerAnimator.SetBool ("IsRunning", false);
+								pc.enabled = false;						
 						}			
 						if (Camera.main.transform.position.y > Vector3.zero.y) {
 								Camera.main.transform.position -= Vector3.up * Time.deltaTime * scrollDownCamspeed;
@@ -93,7 +94,6 @@ public class GameController : MonoBehaviour
 						}
 						if (Camera.main.transform.position.y <= Vector3.zero.y) {
 								Camera.main.transform.position = Vector3.zero;
-								Animator playerAnimator = player.GetComponent<Animator> ();
 								if (playerAnimator != null)
 										playerAnimator.enabled = true;
 								
@@ -129,8 +129,8 @@ public class GameController : MonoBehaviour
 		}
 		
 		public void Quit ()
-		{
-				Application.Quit ();
+		{		
+				Application.LoadLevel ("menu");
 
 		}
 		public void SetGameToPlay ()
@@ -138,11 +138,11 @@ public class GameController : MonoBehaviour
 				this.gameState = GameState.playing;
 		}
 
-		public string SaveScore (string points)
+		public string SavedScore (string points)
 		{
 				
-				saveScore.WriteFile (points);
-				string score = saveScore.GetSavedScore (saveScore.GetFileName ());
+				SaveScore.Instance.WriteFile (points);
+				string score = SaveScore.Instance.GetSavedScore (SaveScore.Instance.GetFileName ());
 				if (score == null)
 						score = "";
 				

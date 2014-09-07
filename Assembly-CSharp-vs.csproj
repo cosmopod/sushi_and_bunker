@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_LINUX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;UNITY_64;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -164,23 +164,6 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-     <Compile Include="Assets\scripts\ActiveBarrierController.cs" />
-     <Compile Include="Assets\scripts\AppearFromAbove.cs" />
-     <Compile Include="Assets\scripts\BarrierObjectController.cs" />
-     <Compile Include="Assets\scripts\DragItem.cs" />
-     <Compile Include="Assets\scripts\DropSurface.cs" />
-     <Compile Include="Assets\scripts\EnemyController.cs" />
-     <Compile Include="Assets\scripts\EnemySpawnController.cs" />
-     <Compile Include="Assets\scripts\GameManager.cs" />
-     <Compile Include="Assets\scripts\HealthbarController.cs" />
-     <Compile Include="Assets\scripts\KeyboardScroll.cs" />
-     <Compile Include="Assets\scripts\LoadValidator.cs" />
-     <Compile Include="Assets\scripts\NotificationManager.cs" />
-     <Compile Include="Assets\scripts\Power.cs" />
-     <Compile Include="Assets\scripts\TooltipManager.cs" />
-     <Compile Include="Assets\scripts\UpdatePanel.cs" />
-     <Compile Include="Assets\scripts\ViewportHolder.cs" />
-     <Compile Include="Assets\scripts\VolumeManager.cs" />
      <Compile Include="Assets\scripts\game\BellControllerGraph.cs" />
      <Compile Include="Assets\scripts\game\BellHolderController.cs" />
      <Compile Include="Assets\scripts\game\BestScore.cs" />
@@ -192,6 +175,11 @@
      <Compile Include="Assets\scripts\game\PlayerControllerGraph.cs" />
      <Compile Include="Assets\scripts\game\SaveScore.cs" />
      <Compile Include="Assets\scripts\game\ScoreController.cs" />
+     <Compile Include="Assets\scripts\menu\ButtonController.cs" />
+     <Compile Include="Assets\scripts\menu\CloseButtonController.cs" />
+     <Compile Include="Assets\scripts\menu\CreditsController.cs" />
+     <Compile Include="Assets\scripts\menu\MenuController.cs" />
+     <Compile Include="Assets\scripts\menu\VolumeController.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
@@ -215,6 +203,7 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
+     <None Include="Assets\Credits.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Additive Colored.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
      <None Include="Assets\NGUI\Examples\Shaders\Refractive.shader" />

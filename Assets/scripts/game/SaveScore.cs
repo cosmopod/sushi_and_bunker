@@ -4,18 +4,46 @@ using System.IO;
 
 public class SaveScore : MonoBehaviour
 {
-		protected string filepath;
 		protected string filename = "SavedScore";
 		protected string extension = ".txt";
 		protected string savedScore = "";
 		protected StreamWriter writer;
+		private static SaveScore instance;
 		
 		
+		
+		void Awake ()
+		{
+				if (instance == null) {
+			
+						//Si es la primera instancia, hacemos un singleton
+						instance = this;
+						DontDestroyOnLoad (this);
+				} else {
+			
+						//Si un singleton ya existe y encontramos otra referencia
+						//en la escena, la destruimos
+						if (this != instance)
+								Destroy (this.gameObject);
+				}
+		}
+
+		public static SaveScore Instance {
+				get {
+						if (instance == null) {
+								instance = GameObject.FindObjectOfType<SaveScore> ();
+								
+								//Le dice a unity queno destruya el objeto cuando cargue otra escena
+								DontDestroyOnLoad (instance.gameObject);
+						}
+			
+						return instance;
+				}
+		}
 
 		// Use this for initialization
 		void Start ()
 		{
-				filepath = Application.dataPath + "\\";
 				
 		}
 	
@@ -26,7 +54,7 @@ public class SaveScore : MonoBehaviour
 		}
 		public string GetFileName ()
 		{
-				return filepath + filename + extension;
+				return Application.dataPath + "\\" + filename + extension;
 		}
 
 		public bool WriteFile (string pts)
@@ -34,17 +62,21 @@ public class SaveScore : MonoBehaviour
 								
 				int n;
 				if (!int.TryParse (GetSavedScore (GetFileName ()), out n)) {
-						writer = new StreamWriter (filepath + filename + extension);
+						writer = new StreamWriter (GetFileName ());
 						writer.WriteLine (pts);
 						writer.Flush ();
 						writer.Close ();
 						return true;
 						
 				}
-				if (int.Parse (pts) <= int.Parse (GetSavedScore (GetFileName ())))
+				if (int.Parse (pts) <= int.Parse (GetSavedScore (GetFileName ())) && int.Parse (pts) >= 0)
 						return false;
-
-				writer = new StreamWriter (filepath + filename + extension);
+				
+				if (int.Parse (pts) < 0) {
+						pts = "0";
+				}
+						
+				writer = new StreamWriter (GetFileName ());
 				writer.WriteLine (pts);
 				writer.Flush ();
 				writer.Close ();
