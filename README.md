@@ -1,4 +1,4 @@
-sushi_and_bunker
+Sushi And Bunker
 ================
 
 A game about cats and sushi.
